@@ -1,5 +1,6 @@
-file = "../Documents/GitHub/python-challenge/PyBank/budget_data.csv"
-
+file = "../Resources/budget_data.csv"
+from os import getcwd
+print(getcwd()) 
 import csv
 
 with open(file) as revenue_data:
