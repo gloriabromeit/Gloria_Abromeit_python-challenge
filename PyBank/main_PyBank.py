@@ -36,5 +36,15 @@ with open(file) as revenue_data:
     print("Average Change: $", round(avg_rev_change))
     print("Greatest Increase in Profits:", max_rev_change_date,"($", max_rev_change,")")
     print("Greatest Decrease in Profits:", min_rev_change_date,"($", min_rev_change,")")
+
+    with open('revenueresults.txt', 'w') as csvfile:
+        filewriter = csv.writer(csvfile, delimiter=',',
+                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        filewriter.writerow(["Financial Analysis"])
+        filewriter.writerow(["Total Months:", len(date)])
+        filewriter.writerow(["Total: $", sum(revenue)])
+        filewriter.writerow(["Average Change: $", round(avg_rev_change)])
+        filewriter.writerow(["Greatest Increase in Profits:", max_rev_change_date,"($", max_rev_change,")"])
+        filewriter.writerow(["Greatest Decrease in Profits:", min_rev_change_date,"($", min_rev_change,")"])
  
     
